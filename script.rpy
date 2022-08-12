@@ -10,13 +10,51 @@ define e = Character('Эйлин', color="#c8ffc8")
 
 # Игра начинается здесь:
 label start:
+define q = Character('QAZ300-&&&', color="#c7ffc7")
 
     scene bg room
+    ы
+    q "«…»"
+    q "«…»"
+    q "«…»"
+    q "доброе утро"
+    q "«…»"
+    q "«…»"
+    q "ты всё ещё смотришь?"
+    q "«…»"
+    q "хочешь знать, почему я сказал доброе утро?"
+    q ". {w=0.5}. {w=0.5}."
+    q "всё просто, это сентиментальность"
+    q "так люди пытаются проявить внимание к своему окружению"
+    q "хочешь знать зачем?"
+    menu:
+
+        "Да":
+            jump choice1_yes
+
+        "Нет":
+            jump choice1_no
+
+    label choice1_yes:
+
+        $ menu_flag = True
+
+        e "ну {w=0.9}я не знаю"
+
+        jump choice1_done
+
+    label choice1_no:
+
+        $ menu_flag = False
+
+        e "\«…»\"
+
+        jump choice1_done
+
+    label choice1_done:
+
 
     show eileen happy
 
-    e "Вы создали новую игру Ren'Py."
-
-    e "Добавьте сюжет, изображения и музыку и отправьте её в мир!"
 
     return
